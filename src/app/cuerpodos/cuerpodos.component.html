@@ -1,0 +1,77 @@
+<!-- NgIf - NgElse -->
+<h1 class="container bg-dark text-white text-center my-4 py-4">ngIf - Show: {{show}}</h1>
+
+<div class="container">
+  <button class="btn btn-warning" (click)="show=!show">Primero</button>
+
+  <p class="text-info" *ngIf="show; else showDos">Lorem ipsum dolor sit amet consectetur
+    adipisicing elit. Quibusdam
+    consequatur
+    quaerat omnis
+    recusandae? Officiis culpa veniam consectetur eum, nesciunt, exercitationem ratione ad similique, aliquam
+    voluptatibus quis obcaecati ipsum eligendi maxime?</p>
+
+    <ng-template #showDos>
+      <p class="text-danger" [ngClass]="{'d-block':activo=='segundo'}">Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Repellat cum esse possimus, modi
+        quam
+        doloribus adipisci. Quidem in quisquam facilis, quam ipsa at, voluptates iste, nobis accusamus neque veritatis ab.
+      </p>
+    </ng-template>
+
+</div>
+
+<!-- NgClass -->
+<h1 class="container bg-dark text-white text-center my-4 py-4">[ngClass]</h1>
+
+<div class="container">
+  <button class="btn btn-dark mb-3" (click)="activo='primero'">Primero</button>
+  <button class="btn btn-danger mb-3" (click)="activo='segundo'">Segundo</button>
+
+  <p class="text-info d-none" [ngClass]="{'d-block':activo=='primero'}">Lorem ipsum dolor sit amet consectetur
+    adipisicing elit. Quibusdam
+    consequatur
+    quaerat omnis
+    recusandae? Officiis culpa veniam consectetur eum, nesciunt, exercitationem ratione ad similique, aliquam
+    voluptatibus quis obcaecati ipsum eligendi maxime?</p>
+
+  <p class="text-danger d-none" [ngClass]="{'d-block':activo=='segundo'}">Lorem ipsum dolor sit amet consectetur
+    adipisicing elit. Repellat cum esse possimus, modi
+    quam
+    doloribus adipisci. Quidem in quisquam facilis, quam ipsa at, voluptates iste, nobis accusamus neque veritatis ab.
+  </p>
+
+</div>
+
+<!-- NgFor List -->
+<h1 class="container bg-dark text-white text-center my-4 py-4">[ngFor] - List</h1>
+
+<div class="container">
+  <ul>
+    <li *ngFor="let curso of cursos">{{curso}}</li>
+  </ul>
+</div>
+
+<!-- NgFor Table -->
+<h1 class="container bg-dark text-white text-center my-4 py-4">[ngFor] - Table</h1>
+
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>TIPO</th>
+        <th>NOMBRE</th>
+        <th>EDAD</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let animal of animales; index as i">
+            <th scope="row">{{i+1}}</th>
+            <td>{{animal.tipo}}</td>
+            <td>{{animal.nombre}}</td>
+            <td>{{animal.edad}}</td>
+          </tr>
+    </tbody>
+  </table>
+</div>
