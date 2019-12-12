@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-cuerpodos',
-  templateUrl: './cuerpodos.component.html',
-  styleUrls: ['./cuerpodos.component.css']
+  selector: 'app-pruebasng',
+  templateUrl: './pruebasng.component.html',
+  styleUrls: ['./pruebasng.component.css']
 })
-export class CuerpodosComponent {
+export class PruebasngComponent {
   // NgIf
   show = true;
   // For NngFor list
